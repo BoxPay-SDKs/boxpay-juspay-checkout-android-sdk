@@ -50,6 +50,10 @@ android {
     kapt {
         correctErrorTypes = true
     }
+
+    viewBinding {
+        enable = true
+    }
 }
 
 dependencies {
@@ -87,5 +91,6 @@ dependencies {
     implementation("com.google.accompanist:accompanist-permissions:0.19.0")
     implementation("com.google.accompanist:accompanist-swiperefresh:0.24.13-rc")
     implementation("androidx.compose.material:material")
-    implementation("com.github.BoxPay-SDKs:checkout-android-sdk:1.1.13")
+    implementation("com.github.BoxPay-SDKs:checkout-android-sdk:1.1.14")
+    implementation ("com.android.volley:volley:1.2.1")
 }
