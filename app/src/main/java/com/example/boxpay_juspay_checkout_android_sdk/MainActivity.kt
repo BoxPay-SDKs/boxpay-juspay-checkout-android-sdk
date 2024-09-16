@@ -22,10 +22,21 @@ class MainActivity : AppCompatActivity() {
         binding.openByDefault.setOnClickListener {
             //        var intent: Intent? = null
             try {
+                val amount = binding.amountEditText.text.toString()
+                val fromTrainStation = binding.fromTrainStation.text.toString()
+                val toTrainStation = binding.toTrainStation.text.toString()
+                val trainNumberName = binding.trainNameNumber.text.toString()
+
+                val bundle = Bundle()
+                bundle.putString("amount", amount.ifEmpty { null })
+                bundle.putString("from", fromTrainStation.ifEmpty { null })
+                bundle.putString("to", toTrainStation.ifEmpty { null })
+                bundle.putString("train", trainNumberName.ifEmpty { null })
                 intent = Intent(
                     this,
                     Check::class.java
                 )
+                intent.putExtras(bundle)
                 startActivity(intent)
             } catch (e: ClassNotFoundException) {
 
