@@ -1,7 +1,10 @@
 package com.example.boxpay_juspay_checkout_android_sdk
 
 import android.content.Context
+import android.content.Intent
+import android.widget.Toast
 import com.android.volley.Response
+import com.android.volley.VolleyError
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import com.boxpay.checkout.sdk.BoxPayOrderCheckout
@@ -69,7 +72,13 @@ class HyperServiceHolder(private val context: Context) {
                 checkout.display()
                 // Call a function that depends on the token
             },
-            Response.ErrorListener { /* no response handling */ }) {
+            Response.ErrorListener { error ->
+                if (error is VolleyError && error.networkResponse != null && error.networkResponse.data != null) {
+                    val errorResponse = String(error.networkResponse.data)
+                    val errorMessage = extractMessageFromErrorResponse(errorResponse)
+                    Toast.makeText(context, errorMessage, Toast.LENGTH_LONG).show()
+                }
+            }) {
             override fun getHeaders(): Map<String, String> {
                 val headers = HashMap<String, String>()
                 headers["X-Client-Connector-Name"] = "Android SDK"
@@ -78,5 +87,18 @@ class HyperServiceHolder(private val context: Context) {
             }
         }
         queue.add(request)
+    }
+
+    fun extractMessageFromErrorResponse(response: String): String? {
+        try {
+            // Parse the JSON string
+            val jsonObject = JSONObject(response)
+            // Retrieve the value associated with the "message" key
+            return jsonObject.getString("message")
+        } catch (e: Exception) {
+            // Handle JSON parsing exception
+
+        }
+        return null
     }
 }
