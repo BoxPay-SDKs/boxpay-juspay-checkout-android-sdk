@@ -1,10 +1,10 @@
-package com.boxpay_juspay.demoApp
+package com.boxpay.juspay.demoApp
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.boxpay.juspay.checkout.sdk.HyperServiceHolder
-import com.boxpay_juspay.demoapp.databinding.ActivityCheckBinding
+import com.boxpay.juspay.demoapp.databinding.ActivityCheckBinding
 import org.json.JSONObject
 
 class Check : AppCompatActivity() {

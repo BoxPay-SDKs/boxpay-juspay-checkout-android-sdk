@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.boxpay_juspay.demoapp"
+    namespace = "com.boxpay.juspay.demoapp"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.boxpay_juspay.demoapp"
+        applicationId = "com.boxpay.juspay.demoapp"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

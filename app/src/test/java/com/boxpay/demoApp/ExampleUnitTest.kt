@@ -1,4 +1,4 @@
-package com.boxpay_juspay.demoApp
+package com.boxpay.demoApp
 
 import org.junit.Test
 
