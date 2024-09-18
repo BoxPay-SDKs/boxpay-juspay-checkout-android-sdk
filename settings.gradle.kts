@@ -22,4 +22,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "boxpay-juspay-checkout-android-sdk"
 include(":app")
- 
+include(":sdk")
