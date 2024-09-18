@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.boxpay_juspay_checkout_android_sdk.MainActivity">
+    tools:context="com.boxpay_juspay.demoApp.MainActivity">
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/openByDefault"
