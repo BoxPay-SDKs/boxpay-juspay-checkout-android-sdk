@@ -1,4 +1,4 @@
-package com.boxpay_juspay.demoApp
+package com.boxpay.demoApp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

@@ -1,10 +1,10 @@
-package com.boxpay_juspay.demoApp
+package com.boxpay.juspay.demoApp
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.boxpay_juspay.demoapp.databinding.ActivityMainBinding
+import com.boxpay.juspay.demoapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private val binding: ActivityMainBinding by lazy {

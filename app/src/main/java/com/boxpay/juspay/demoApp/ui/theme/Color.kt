@@ -1,4 +1,4 @@
-package com.boxpay_juspay.demoApp.ui.theme
+package com.boxpay.juspay.demoApp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
