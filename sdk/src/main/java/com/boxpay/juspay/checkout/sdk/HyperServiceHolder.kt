@@ -56,7 +56,8 @@ class HyperServiceHolder(private val context: Context) {
         orderDetails.put("options.create_mandate", "REQUIRED")
         orderDetails.put("mandate.frequency", "ASPRESENTED")
         val queue = Volley.newRequestQueue(context)
-        val url = "https://sandbox-apis.boxpay.tech/v0/juspay/checkout/sessions"
+        val baseUrl = if (this.testEnv) "test-apis.boxpay.tech" else if (sandbox) "sandbox-apis.boxpay.tech" else "apis.boxpay.in"
+        val url = "https://$baseUrl/v0/juspay/checkout/sessions"
 
         val request = object : JsonObjectRequest(
             Method.POST, url, orderDetails,
