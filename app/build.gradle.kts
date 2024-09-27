@@ -5,6 +5,7 @@ plugins {
     id("dagger.hilt.android.plugin")
     id("org.jetbrains.kotlin.plugin.compose")
     id("maven-publish")
+    id("jacoco")
 }
 
 android {
@@ -54,6 +55,10 @@ android {
 
     viewBinding {
         enable = true
+    }
+
+    lint {
+        baseline = file("lint-baseline.xml")
     }
 }
 
